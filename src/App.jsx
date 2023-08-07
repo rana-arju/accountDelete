@@ -1,7 +1,7 @@
 import {useRef} from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import toast from "react-hot-toast";
+import toast, { Toaster } from 'react-hot-toast';
 function App() {
   const {
     register,
@@ -22,7 +22,7 @@ const form = useRef();
       .then(
         (result) => {
           if (result) {
-            toast.success("Message Send Successful!");
+            toast.success("Request Send Successful!");
             reset();
           }
         },
@@ -32,7 +32,7 @@ const form = useRef();
       );
   };
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact mx-auto">
       <div className="container">
         <div className="section-title">
           <h2>Delete Account Request.</h2>
@@ -116,6 +116,8 @@ const form = useRef();
           </div>
         </div>
       </div>
+      <Toaster />
+
     </section>
   );
   
